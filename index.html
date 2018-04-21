@@ -12,10 +12,9 @@
         <div class="small-6 columns">
           <h1 class="text-center">YOU</h1>
           <div class="healthbar">
-            <div
-                  class="healthbar text-center"
-                  style="background-color: green; margin: 0; color: white;"
-                  :style="{width: playerHealth + '%'}">
+            <div class="healthbar text-center"
+                 style="background-color: green; margin: 0; color: white;"
+                 :style="{width: playerHealth + '%'}">
               {{ playerHealth }}
             </div>
           </div>
@@ -23,10 +22,9 @@
         <div class="small-6 columns">
           <h1 class="text-center">MONSTER</h1>
           <div class="healthbar">
-            <div
-                  class="healthbar text-center"
-                  style="background-color: green; margin: 0; color: white;"
-                  :style="{width: monsterHealth + '%'}">
+            <div class="healthbar text-center"
+                 style="background-color: green; margin: 0; color: white;"
+                 :style="{width: monsterHealth + '%'}">
               {{ monsterHealth }}
             </div>
           </div>
@@ -48,7 +46,8 @@
       <section class="row log" v-if="turns.length > 0">
         <div class="small-12 columns">
           <ul>
-            <li v-for="turn in turns">
+            <li v-for="turn in turns"
+                :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">
                 {{ turn.text }}
             </li>
           </ul>
